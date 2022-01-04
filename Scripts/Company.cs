@@ -31,21 +31,21 @@ public class Company
         }
         else
         {
-            Debug.LogError(companyAbr + "_" + companyName + " Company profile could not be found"); //  yro'ue fucked
+            Debug.LogError(companyAbr + "_" + companyName + " Company profile could not be found");
         }
-        if (File.Exists(path)) // making sure this fucking piece of shit exists
+        if (File.Exists(path)) 
         {
             BinaryReader br = new BinaryReader(new StreamReader(path).BaseStream);
             lines = br.ReadInt32();
             for (int line = 0; line < lines; line++)
             {
                 com.priceHistory.Add(br.ReadSingle()); // apparently in the world of C# a float is actually called a single
-                // just like me, anyways this shit reads the float and appends it to the price history
+                
             }
         }
         else
         {
-            Debug.LogError(companyAbr + "_" + companyName + " History save file could not be found"); //  also fucked
+            Debug.LogError(companyAbr + "_" + companyName + " History save file could not be found");
         }
         return com;
     }
