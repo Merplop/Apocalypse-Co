@@ -21,6 +21,7 @@ public class TurnCounter : MonoBehaviour
       Debug.Log("Current Turn: " + CurrentTurn);
       sound.Play();
       FadeScreen.GetComponent<Animation>().Play("FadeScreenAnim");
+      BountyHandler.GetComponent<BountyCounter>().randGen();
       StartCoroutine(wait());
     }
 
