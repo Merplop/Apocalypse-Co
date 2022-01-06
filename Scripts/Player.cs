@@ -13,17 +13,18 @@ public class Player : MonoBehaviour
       Vault
     }
 
-    public enum Drug {
-      LiberalSugar,
-      ConservativeSugar,
-      TripTheFuckOut
+    public enum Modifier {
+      Liberal,
+      Conservative,
+      Random
     }
 
     public int money;
+    public int bounty;
     public float playerSpeed;
     public double propMultiplier;
     public Room CurrentRoom;
-    public Drug CurrentDrug;
+    public Modifier CurrentMod;
     public GameObject player;
 
     // Start is called before the first frame update
@@ -37,20 +38,8 @@ public class Player : MonoBehaviour
 
     }
 
-    void LiberalSugar() {
-        
-    }
-
-    void ConservativeSugar() {
-
-    }
-
-    void TripTheFuckOut() {
-
-    }
-
-    public void defCurrentDrug(Drug cd) { 
-      CurrentDrug = cd;
+    public void defCurrentMod(Modifier cd) { 
+      CurrentMod = cd;
     }
 
     public void defCurrentRoom(Room cr) { 
@@ -61,8 +50,8 @@ public class Player : MonoBehaviour
       return CurrentRoom;
     }
 
-    public Drug getCurrentDrug() { 
-      return CurrentDrug;
+    public Modifier getCurrentMod() { 
+      return CurrentMod;
     }
 
     public int getMoney() {
@@ -71,6 +60,10 @@ public class Player : MonoBehaviour
 
     public float getSpeed() { 
       return playerSpeed;
+    }
+
+    public int getBounty() { 
+      return bounty;
     }
 
     
